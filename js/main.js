@@ -93,13 +93,17 @@ document.getElementById('express-delivery').addEventListener('click', function()
     const total = document.getElementById('total-cost').innerText ;
     const promoTotal = Math.floor(total - (total*20/100))  ;
     const promoFieldInput = document.getElementById('promo-input');
+    const promoSuccess = document.getElementById('promo-success') ;
+    const promoSection = document.getElementById('promo-section');
     const promoField = promoFieldInput.value ;
     document.getElementById('total-cost').innerText = promoTotal
 
     // cheak promo
     if (promoField == 'stevekaku') {
         promoTotal ;
-        console.log(promoTotal) ;
+        promoSuccess.style.display = 'block' ;
+        promoSection.style.display = 'none' ;
+        
     }
     else {
         alert("Invalid Promo Code");
@@ -109,3 +113,8 @@ document.getElementById('express-delivery').addEventListener('click', function()
     promoFieldInput.value = '' ;
 
 })
+
+
+ document.getElementById('sub-total').addEventListener('click' , function(){
+    updateTotal()
+ })

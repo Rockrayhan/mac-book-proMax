@@ -7,6 +7,12 @@
     <title>Mac Book Pro</title>
     <!-- css link -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+      #promo-success {
+        display: none ;
+      }
+      
+    </style>
 </head>
 <body>
     
@@ -91,11 +97,13 @@
 
                   <!-- promo part  -->
 
-                  <div class="mt-5 mb-5">
+                  <div id="promo-section" class="mt-5 mb-5">
                       <p class="fs-5">Add promo Code</p>
                       <input id="promo-input" type="text"> <button id="promo-submit" class="btn btn-danger">Apply</button>
                       
                   </div>
+
+                  <div id="promo-success" class="text-success fw-bold"> <h4>promo successfully applied</h4> </div>
                
 
             </div>
@@ -106,6 +114,11 @@
 
   </main>
 
+  <footer class="mb-5 text-center"> 
+    <hr> 
+  
+   <h1> TOTAL $ <span id="sub-total" >1299</span>  </h3>
+  </footer>
   
 
 
