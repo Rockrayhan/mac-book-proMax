@@ -1,14 +1,11 @@
-
+// make text to number
 function innerTextToNumber(id){
     const element = document.getElementById(id).innerText;
     const number = parseFloat(element) ;
     return number
 }
 
-
-
-
-
+// update total 
 function updateTotal() {
     const memory16 = document.getElementById('16gb-memory');
     const storage512 = document.getElementById('storage-256');
@@ -24,16 +21,27 @@ function updateTotal() {
     const total = bestPrice + memoryprice + storageCost + deliveryCost ;
 
     document.getElementById('total-cost').innerText = total ;
-    
 }
+
+
+
+// decrease code 
+function commonCode (inputId) {
+     const memoryCostInput = document.getElementById(inputId) ;
+    const memorycostNumber = memoryCostInput.innerText ;
+    memoryCostInput.innerText = '0' ;
+    return memorycostNumber ;
+}
+
 
 
 // 8 GB memory
 document.getElementById('8gb-memory').addEventListener('click', function(){
-    const memoryCostInput = document.getElementById('memory-cost');
-    const memorycostNumber = memoryCostInput.innerText ;
-    memoryCostInput.innerText = '0' ;
-    updateTotal()
+    // const memoryCostInput = document.getElementById('memory-cost');
+    // const memorycostNumber = memoryCostInput.innerText ;
+    // memoryCostInput.innerText = '0' ;
+    const memorycostNumber = commonCode ('memory-cost') ;
+    updateTotal('memory-cost')
 })
 
 // 16 GB memory
@@ -43,14 +51,16 @@ document.getElementById('16gb-memory').addEventListener('click', function(){
     memoryCostInput.innerText = '180' ;
     updateTotal()
     
+    
 })
 
 
 // 256 GB Storage
 document.getElementById('storage-256').addEventListener('click', function(){
-    const storageCostInput = document.getElementById('storage-cost') ;
-    const storageCostNumber = storageCostInput.innerText ;
-    storageCostInput.innerText = '0' ;
+    // const storageCostInput = document.getElementById('storage-cost') ;
+    // const storageCostNumber = storageCostInput.innerText ;
+    // storageCostInput.innerText = '0' ;
+    const storageCostNumber = commonCode ('storage-cost') ;
     updateTotal()
     
 })
@@ -74,9 +84,10 @@ document.getElementById('storage-1tb').addEventListener('click', function(){
 
 // Free shipping 
 document.getElementById('free-delivery').addEventListener('click', function(){
-    const freeDeliveryText = document.getElementById('delivery-cost');
-    const freeDelivery = freeDeliveryText.innerText;
-    freeDeliveryText.innerText = '0';
+    // const freeDeliveryText = document.getElementById('delivery-cost');
+    // const freeDelivery = freeDeliveryText.innerText;
+    // freeDeliveryText.innerText = '0';
+    const storageCostNumber = commonCode ('delivery-cost') ;
     updateTotal()
 })
 
