@@ -19,7 +19,7 @@ function updateTotal() {
     const deliveryCost = innerTextToNumber('delivery-cost');
 
     const total = bestPrice + memoryprice + storageCost + deliveryCost ;
-    // const SubTotal = bestPrice + memoryprice + storageCost + deliveryCost ;
+    
 
     document.getElementById('total-cost').innerText = total ;
 }
@@ -56,9 +56,7 @@ function commonCode (inputId) {
 
 // 8 GB memory
 document.getElementById('8gb-memory').addEventListener('click', function(){
-    // const memoryCostInput = document.getElementById('memory-cost');
-    // const memorycostNumber = memoryCostInput.innerText ;
-    // memoryCostInput.innerText = '0' ;
+    
     const memorycostNumber = commonCode ('memory-cost') ;
     updateTotal()
     updateSubTotal()
@@ -78,9 +76,6 @@ document.getElementById('16gb-memory').addEventListener('click', function(){
 
 // 256 GB Storage
 document.getElementById('storage-256').addEventListener('click', function(){
-    // const storageCostInput = document.getElementById('storage-cost') ;
-    // const storageCostNumber = storageCostInput.innerText ;
-    // storageCostInput.innerText = '0' ;
     const storageCostNumber = commonCode ('storage-cost') ;
     updateTotal()
     updateSubTotal()
@@ -108,9 +103,6 @@ document.getElementById('storage-1tb').addEventListener('click', function(){
 
 // Free shipping 
 document.getElementById('free-delivery').addEventListener('click', function(){
-    // const freeDeliveryText = document.getElementById('delivery-cost');
-    // const freeDelivery = freeDeliveryText.innerText;
-    // freeDeliveryText.innerText = '0';
     const storageCostNumber = commonCode ('delivery-cost') ;
     updateTotal()
     updateSubTotal()
@@ -146,12 +138,6 @@ document.getElementById('express-delivery').addEventListener('click', function()
         alert("Invalid Promo Code");
     }
 
-    // clear field 
-    promoFieldInput.value = '' ;
-
 })
 
 
- document.getElementById('sub-total').addEventListener('click' , function(){
-    updateTotal()
- })
